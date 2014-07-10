@@ -105,7 +105,7 @@ class BlackJack:
 			self.player.remaining_fund()
 		
 		elif self.player.is_blackjack() and dealer_val != 21:
-			print(print("Player's Hand: ",end="")
+			print("Player's Hand: ",end="")
 			self.player_hand.print_cards()
 			Print("!!BLACKJACK!!")
 			self.player.add_fund()
