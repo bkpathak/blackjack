@@ -77,9 +77,7 @@ class BlackJack:
 
 
 	def dealer_move(self):
-		if self.player.is_busted():
-			self.result()
-		else:
+		if not self.player.is_busted():
 			print("Dealer's Turn:")
 			while True:
 				print("Hand :",end="")
@@ -142,4 +140,10 @@ class BlackJack:
 
 		else:
 			pass
+
+		print("Player current Status:")
+		print("Player has{0:.2f} ".format(self.player.get_fund()))
+
+
+
 
