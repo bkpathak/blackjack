@@ -17,7 +17,7 @@ class BlackJack:
 	
 	def place_bet(self):
 		if self.player.get_fund() < 1:
-			print("Sorry,not enough fund to play. Start a new game")
+			print("Sorry,not enough fund to play. Start a new game.")
 			input()
 			sys.exit(0)
 

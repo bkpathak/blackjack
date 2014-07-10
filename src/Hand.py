@@ -20,8 +20,9 @@ class Hand:
 				is_ACE = True
 			value += card.get_value(rank)
 			#Make Ace value 11 if hand is soft i.e less then 12				
-			if value < 12:
-				value += 10
+			if is_ACE:
+				if value < 12:
+					value += 10
 
 		return value
 
