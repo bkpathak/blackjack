@@ -61,7 +61,7 @@ class BlackJack:
 				new_card = self.deck.deal_card()
 				self.player_hand.add_card(new_card)
 				print("\n")
-				print(new_card.get_suit()+" of " + new_card.get_rank())
+				print(new_card.get_rank()+" of " + new_card.get_suit())
 				if self.player_hand.get_value() > 21:
 					self.player.busted = True
 					break
@@ -69,7 +69,7 @@ class BlackJack:
 			elif player_input.lower() == 'blackjack':
 				self.player.blackjack = True
 				break
-				
+
 			else:
 				break
 			
