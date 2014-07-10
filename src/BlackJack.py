@@ -68,6 +68,8 @@ class BlackJack:
 			
 			elif player_input.lower() == 'blackjack':
 				self.player.blackjack = True
+				break
+				
 			else:
 				break
 			
@@ -111,7 +113,7 @@ class BlackJack:
 			self.player.add_fund()
 
 
-		elif dealer_value > 21:
+		elif dealer_val > 21:
 			print("Dealer Busted -- Player Wins!!!")
 			self.player.add_fund()
 
