@@ -85,13 +85,15 @@ class BlackJack:
 				print("Hand :",end="")
 				self.dealer_hand.print_cards()
 				dealer_value = self.dealer_hand.get_value()
-				if dealer_value <= 17:
+				if dealer_value < 17:
 					print("Dealer's Play: Hit")
 					self.dealer_hand.add_card(self.deck.deal_card())
 				elif dealer_value >= 17 and dealer_value <= 21:
 					print("Dealer's Play: Stand")
 					break
 				else:
+					print("Dealer Hand: ",end="")
+					self.dealer_hand.print_cards()
 					break
 
 	def result(self):
@@ -112,8 +114,6 @@ class BlackJack:
 
 
 		elif dealer_value > 21:
-			print("Dealer Hand: ",end="")
-			self.dealer_hand.print_cards()
 			print("Dealer Busted -- Player Wins!!!")
 			self.player.add_fund()
 
@@ -142,28 +142,4 @@ class BlackJack:
 
 		else:
 			pass
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
