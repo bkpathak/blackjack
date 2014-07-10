@@ -1,4 +1,3 @@
-import random
 import sys
 
 from Player import Player
@@ -37,10 +36,10 @@ class BlackJack:
 			except ValueError:
 				bet = int(input("Doesn't looks like valid bet.Try Again!!!"))
 
-		self.player.remaining_fund(bet)
+		self.player.current_bet(bet)
 
 
-	def play(self):
+	def player_move(self):
 		self.player_hand.add_card(self.deck.deal_card())
 		self.dealer_hand.add_card(self.deck.deal_card())
 		self.player_hand.add_card(self.deck.deal_card())
@@ -55,64 +54,96 @@ class BlackJack:
 		print("Hand: ",end="")
 		self.player_hand.print_cards()
 
-		player_input = input("Player's play(Hit/Stand):")
-		if player_input.lower() == 'hit':
-			busted = False
-			while not busted:
+		player_input = input("Player's play:")
+
+		while True:
+			if player_input.lower() == 'hit':
 				new_card = self.deck.deal_card()
 				self.player_hand.add_card(new_card)
 				print("\n")
 				print(new_card.get_suit()+" of " + new_card.get_rank())
-				player_value = self.player_hand.get_value()
-					if player_value <= 21:
-						print("Hand: ",end="")
-						self.player_hand.print_cards()
-					else:
-						print("Hand: ",end="")
-						self.player_hand.print_cards()
-						print("BUSTED!!")
-						busted = True
-				
+				if self.player_hand.get_value() > 21:
+					self.player.busted = True
+					break
+			
+			elif player_input.lower() == 'blackjack':
+				self.player.blackjack = True
+			else:
+				break
+			
+			print("Hand: ",end="")
+			self.player_hand.print_cards()
+			player_input = input("Player's play:")
+
+
+	def dealer_move(self):
+		if self.player.is_busted():
+			self.result()
+		else:
+			print("Dealer's Turn:")
+			while True:
+				print("Hand :",end="")
+				self.dealer_hand.print_cards()
+				dealer_value = self.dealer_hand.get_value()
+				if dealer_value <= 17:
+					print("Dealer's Play: Hit")
+					self.dealer_hand.add_card(self.deck.deal_card())
+				elif dealer_value >= 17 and dealer_value <= 21:
+					print("Dealer's Play: Stand")
+					break
 				else:
-					while 
-						print("Dealer's Turn:")
-						print("Hand :",end="")
-						self.dealer_hand.print_cards()
-						dealer_value = self.dealer_hand.get_value()
-						if dealer_value <= 17:
-							print("Dealer's Play: Hit")
-							self.dealer_hand.add_card(self.deck.deal_card())
+					break
 
-						elif dealer_value >= 17 and dealer_value <= 21:
-							print("Dealer's Play: Stand")
+	def result(self):
+		dealer_val = self.dealer_hand.get_value()
+		player_val = self.dealer_hand.get_value()
 
-						else:
-							print("Hand :",end="")
-							self.dealer_hand.print_cards()
-							print("Dealer Busted")
-							busted = True
+		if self.player.is_busted():
+			print("Player's Hand: ",end="")
+			self.player_hand.print_cards()
+			print("Player Busted -- Dealer Wins!!!")
+			self.player.remaining_fund()
+		
+		elif self.player.is_blackjack() and dealer_val != 21:
+			print(print("Player's Hand: ",end="")
+			self.player_hand.print_cards()
+			Print("!!BLACKJACK!!")
+			self.player.add_fund()
 
 
+		elif dealer_value > 21:
+			print("Dealer Hand: ",end="")
+			self.dealer_hand.print_cards()
+			print("Dealer Busted -- Player Wins!!!")
+			self.player.add_fund()
 
+		elif player_val > dealer_val:
+			print("Player's Hand: ",end="")
+			self.player_hand.print_cards()
+			print("Dealer's Hand: ",end="")
+			self.dealer_hand.print_cards()
+			print("Player Win!!!")
+			self.player.add_fund()
+
+		elif player_val < dealer_val:
+			print("Player's Hand: ",end="")
+			self.player_hand.print_cards()
+			print("Dealer's Hand: ",end="")
+			self.dealer_hand.print_cards()
+			Print("Dealer Win!!!")
+			self.player.remaining_fund()
+
+		elif player_val == dealer_val:
+			print("Player's Hand: ",end="")
+			self.player_hand.print_cards()
+			print("Dealer's Hand: ",end="")
+			self.dealer_hand.print_cards()
+			print("Points Tie.PUSH")
 
 		else:
-			print("Sorry,not enough fund to play. Start a new game")
-			input()
-			sys.exit(0)
+			pass
 
 
-	def hit(self):
-		new_card = self.deck.deal_card()
-		self.player_hand.add_card(new_card)
-		print("\n")
-		print(new_card.get_rank()+" of " + new_card.get_suit())
-		return self.player_hand.get_value()
-
-
-
-
-b = BlackJack()
-b.play()
 
 
 
