@@ -15,19 +15,32 @@ class BlackJack:
 		self.player_hand = Hand()
 		self.dealer_hand = Hand()
 	
-	def play(self):
-		try:
-			bet = int(input("How much does to bet?"))
-			if bet < 1:
-				bet = int(input())
-		self.player.remaining_fund(bet)
-
 	
-		if self.player.get_fund() > 1:
+	def place_bet(self):
+		if self.player.get_fund() < 1:
 			print("Sorry,not enough fund to play. Start a new game")
 			input()
 			sys.exit(0)
 
+		print("You have "+str(self.player.get_fund())+" chips.")
+		bet = int(input("Place your bet: "))
+		
+		while True:
+			try:
+				if bet < 1:
+					bet = int(input("Bet must be at least 1 chip.Try Again!!! "))
+				elif self.player.get_fund() < bet:
+					bet = int(input("Not enough chips.Try Again!!! "))
+				else:
+					break
+		
+			except ValueError:
+				bet = int(input("Doesn't looks like valid bet.Try Again!!!"))
+
+		self.player.remaining_fund(bet)
+
+
+	def play(self):
 		self.player_hand.add_card(self.deck.deal_card())
 		self.dealer_hand.add_card(self.deck.deal_card())
 		self.player_hand.add_card(self.deck.deal_card())
