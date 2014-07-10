@@ -17,9 +17,8 @@ if __name__ == '__main__':
 		bj.dealer_move()
 		bj.result()
 		round += 1
-		player_choice = input("Play another round(yes/no)? ")
+		next_round = input("Play another round(yes/no)? ")
 		print("\n")
-
-	print("Goodbye !")
+	print("Goodbye !\n")
 
 

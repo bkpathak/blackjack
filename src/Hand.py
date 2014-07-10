@@ -13,12 +13,16 @@ class Hand:
 
 	def get_value(self):
 		value = 0
+		is_ACE = False
 		for card in self.player_hand:
 			rank = card.get_rank()
-			if rank == "ACE" and value <= 10:
-				value += 11
-			else:	
-				value += card.get_value(rank)
+			if rank == "ACE":
+				is_ACE = True
+			value += card.get_value(rank)
+			#Make Ace value 11 if hand is soft i.e less then 12				
+			if value < 12:
+				value += 10
+
 		return value
 
 	def print_cards(self):

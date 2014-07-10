@@ -66,8 +66,12 @@ class BlackJack:
 					break
 			
 			elif player_input.lower() == 'blackjack':
-				self.player.blackjack = True
-				break
+				if self.player_hand.get_value() != 21:
+					print("Please, count your card properly.It's not BlackJack.")
+
+				else:
+					self.player.blackjack = True
+					break
 
 			else:
 				break
@@ -100,7 +104,7 @@ class BlackJack:
 
 	def result(self):
 		dealer_val = self.dealer_hand.get_value()
-		player_val = self.dealer_hand.get_value()
+		player_val = self.player_hand.get_value()
 
 		print("\n")
 		if self.player.is_busted():
@@ -112,7 +116,7 @@ class BlackJack:
 		elif self.player.is_blackjack() and dealer_val != 21:
 			print("Player's Hand: ",end="")
 			self.player_hand.print_cards()
-			Print("!!BLACKJACK!!")
+			print("!!BLACKJACK!!")
 			self.player.add_fund()
 
 
@@ -135,7 +139,7 @@ class BlackJack:
 			self.player_hand.print_cards()
 			print("Dealer's Hand: ",end="")
 			self.dealer_hand.print_cards()
-			Print("Dealer Win!!!")
+			print("Dealer Win!!!")
 			self.player.remaining_fund()
 
 		elif player_val == dealer_val:

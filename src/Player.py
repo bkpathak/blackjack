@@ -21,7 +21,7 @@ class Player:
 
 	def add_fund(self):
 		if self.blackjack:
-			Player.fund = 1.5 * self.bet
+			Player.fund += 1.5 * self.bet
 		else:
 			Player.fund += self.bet
 
