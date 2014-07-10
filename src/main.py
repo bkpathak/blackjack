@@ -5,18 +5,20 @@ from BlackJack import BlackJack
 if __name__ == '__main__':
 	print("Welcome to BlackJack!")
 	print("!!Rules!!")
-	print("Options to player:Hit or Stand")
-	print("Type Blackjack if your hand have Blackjack combination(21)!")
+	print("1.Options to player:Hit or Stand")
+	print("2.Type Blackjack if your hand have Blackjack combination(21)!\n")
 	round = 1
 	next_round = 'yes'
-	bj = BlackJack()
 	while next_round == 'yes':
 		print("Round:",round)
+		bj = BlackJack()
 		bj.place_bet()
 		bj.player_move()
 		bj.dealer_move()
 		bj.result()
+		round += 1
 		player_choice = input("Play another round(yes/no)? ")
+		print("\n")
 
 	print("Goodbye !")
 

@@ -21,7 +21,7 @@ class BlackJack:
 			input()
 			sys.exit(0)
 
-		print("You have "+str(self.player.get_fund())+" chips.")
+		print("You have {0:.2f}".format(self.player.get_fund())+" chips.")
 		bet = int(input("Place your bet: "))
 		
 		while True:
@@ -44,7 +44,7 @@ class BlackJack:
 		self.dealer_hand.add_card(self.deck.deal_card())
 		self.player_hand.add_card(self.deck.deal_card())
 		self.dealer_hand.add_card(self.deck.deal_card())
-
+		print("\n")
 		print("Player Hand: ",end="")
 		self.player_hand.print_cards()
 		print("Dealer Hand: ",end="")
@@ -53,14 +53,13 @@ class BlackJack:
 		print("\n\nPlayer's Turn:")
 		print("Hand: ",end="")
 		self.player_hand.print_cards()
-
+		print("\n")
 		player_input = input("Player's play:")
 
 		while True:
 			if player_input.lower() == 'hit':
 				new_card = self.deck.deal_card()
 				self.player_hand.add_card(new_card)
-				print("\n")
 				print(new_card.get_rank()+" of " + new_card.get_suit())
 				if self.player_hand.get_value() > 21:
 					self.player.busted = True
@@ -75,31 +74,32 @@ class BlackJack:
 			
 			print("Hand: ",end="")
 			self.player_hand.print_cards()
-			player_input = input("Player's play:")
+			player_input = input("\nPlayer's play:")
 
 
 	def dealer_move(self):
 		if not self.player.is_busted():
-			print("Dealer's Turn:")
+			print("\nDealer's Turn:")
 			while True:
 				print("Hand :",end="")
 				self.dealer_hand.print_cards()
 				dealer_value = self.dealer_hand.get_value()
+				print(new_card.get_rank()+" of " + new_card.get_suit())
 				if dealer_value < 17:
-					print("Dealer's Play: Hit")
-					self.dealer_hand.add_card(self.deck.deal_card())
+					print("\nDealer's Play: Hit")
+					new_card = self.deck.deal_card()
+					self.dealer_hand.add_card(new_card)
 				elif dealer_value >= 17 and dealer_value <= 21:
 					print("Dealer's Play: Stand")
 					break
 				else:
-					print("Dealer Hand: ",end="")
-					self.dealer_hand.print_cards()
 					break
 
 	def result(self):
 		dealer_val = self.dealer_hand.get_value()
 		player_val = self.dealer_hand.get_value()
 
+		print("\n")
 		if self.player.is_busted():
 			print("Player's Hand: ",end="")
 			self.player_hand.print_cards()
@@ -114,6 +114,8 @@ class BlackJack:
 
 
 		elif dealer_val > 21:
+			print("Dealer Hand: ",end="")
+			self.dealer_hand.print_cards()
 			print("Dealer Busted -- Player Wins!!!")
 			self.player.add_fund()
 
@@ -143,8 +145,9 @@ class BlackJack:
 		else:
 			pass
 
+		print("\n")
 		print("Player current Status:")
-		print("Player has{0:.2f} ".format(self.player.get_fund()))
+		print("Player has {0:.2f} chips\n".format(self.player.get_fund()))
 
 
 
