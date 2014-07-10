@@ -84,14 +84,17 @@ class BlackJack:
 				print("Hand :",end="")
 				self.dealer_hand.print_cards()
 				dealer_value = self.dealer_hand.get_value()
-				print(new_card.get_rank()+" of " + new_card.get_suit())
+				
 				if dealer_value < 17:
 					print("\nDealer's Play: Hit")
 					new_card = self.deck.deal_card()
+					print(new_card.get_rank()+" of " + new_card.get_suit())
 					self.dealer_hand.add_card(new_card)
+				
 				elif dealer_value >= 17 and dealer_value <= 21:
 					print("Dealer's Play: Stand")
 					break
+				
 				else:
 					break
 
