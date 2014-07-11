@@ -40,6 +40,7 @@ class BlackJack:
 
 
 	def player_move(self):
+
 		self.player_hand.add_card(self.deck.deal_card())
 		self.dealer_hand.add_card(self.deck.deal_card())
 		self.player_hand.add_card(self.deck.deal_card())
@@ -61,17 +62,39 @@ class BlackJack:
 				new_card = self.deck.deal_card()
 				self.player_hand.add_card(new_card)
 				print(new_card.get_rank()+" of " + new_card.get_suit())
-				if self.player_hand.get_value() > 21:
+				if self.player_hand.is_busted():
 					self.player.busted = True
 					break
 			
 			elif player_input.lower() == 'blackjack':
-				if self.player_hand.get_value() != 21:
-					print("Please, count your card properly.It's not BlackJack.")
-
-				else:
+				if self.player_hand.is_blackjack():
 					self.player.blackjack = True
 					break
+	
+
+			elif player_input.lower() == 'double':
+				if len(self.player_hand.hand) == 2:
+					double_bet = int(input("Enter the double bet amount: "))
+					if double_bet <= self.player.get_fund() and double_bet <= self.player.bet[0]:
+						self.player.current_bet(double_bet)
+						new_card = self.deck.deal_card()
+						self.player_hand.add_card(new_card)
+						print(new_card.get_rank()+" of " + new_card.get_suit())
+						if self.player_hand.is_busted():
+							self.player.busted = True
+							break
+						elif self.player_hand.is_blackjack():
+							self.player.blackjack = True
+							break
+						else:
+							break
+
+					else:
+						print("You should have enough fund and the double cannot be more then 100% of original bet.Try Again!!")
+				
+				else:
+					print("You can only Double Down initially.Try other move!!")
+
 
 			else:
 				break
