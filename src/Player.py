@@ -6,19 +6,38 @@ class Player:
 	fund = 100  # create static variable fund to play multiple round of game
 
 	def __init__(self):
-		self.busted = False
+		self.busted = [False,False]   # To handle each split case separately
 		self.bet = []
 		self.blackjack = False
 		self.split = False
 
 	def get_fund(self):
+		'''
+		Fund at the end of each round.
+		'''
 		return Player.fund 
+	
+	def get_bet(self):
+		return sum(self.bet)
+
 
 	def remaining_fund(self):
-		Player.fund -= sum(self.bet)
+		if self.split:
+			Player.fund -= self.bet[0]
+		else:
+			Player.fund -= sum(self.bet)
 
-	def is_busted(self):
-		return self.busted
+	def current_fund(self):
+		'''
+		Fund to play for current round.
+		'''
+		return Player.fund - sum(self.bet)
+
+	def is_busted(self,index = 0):
+		if index == 0:
+			return self.busted[index]
+		else:
+			return self.busted[index]
 
 	def is_split(self):
 		return self.split
@@ -26,6 +45,10 @@ class Player:
 	def add_fund(self):
 		if self.blackjack:
 			Player.fund += 1.5 * sum(self.bet)
+		
+		elif self.split:
+			Player.fund += self.bet[0]
+
 		else:
 			Player.fund += sum(self.bet)
 
