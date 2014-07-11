@@ -10,7 +10,7 @@ class Hand:
 	def add_card(self,card):
 		self.hand.append(card)
 		
-		
+
 	def get_value(self):
 		value = 0
 		is_ACE = False
@@ -34,7 +34,6 @@ class Hand:
 
 	def is_blackjack(self):
 		if self.get_value() != 21:
-			print("Please, count your card properly.It's not BlackJack.")
 			return False
 		else:
 			return True
