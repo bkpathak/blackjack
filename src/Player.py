@@ -7,26 +7,26 @@ class Player:
 
 	def __init__(self):
 		self.busted = False
-		self.bet = 0
+		self.bet = []
 		self.blackjack = False
 
 	def get_fund(self):
 		return Player.fund 
 
 	def remaining_fund(self):
-		Player.fund -= self.bet
+		Player.fund -= sum(self.bet)
 
 	def is_busted(self):
 		return self.busted
 
 	def add_fund(self):
 		if self.blackjack:
-			Player.fund += 1.5 * self.bet
+			Player.fund += 1.5 * sum(self.bet)
 		else:
-			Player.fund += self.bet
+			Player.fund += sum(self.bet)
 
 	def current_bet(self,bet):
-		self.bet = bet
+		self.bet.append(bet)
 
 	def is_blackjack(self):
 		return self.blackjack
