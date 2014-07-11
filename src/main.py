@@ -1,6 +1,6 @@
 # main function to run the program
 
-from BlackJack1 import BlackJack
+from BlackJack import BlackJack
 
 if __name__ == '__main__':
 	print("*****Welcome to BlackJack!*****")
