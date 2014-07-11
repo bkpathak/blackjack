@@ -26,11 +26,15 @@ class Hand:
 
 		return value
 
+	def get_hand(self):
+		return self.hand
+		
 	def is_busted(self):
 		if self.get_value() > 21:
 			return True
 		else:
 			return False
+
 
 	def is_blackjack(self):
 		if self.get_value() != 21:
