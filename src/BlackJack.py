@@ -104,7 +104,7 @@ class BlackJack:
 
 
 			else:
-				continue
+				break
 			
 			
 
