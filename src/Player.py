@@ -9,6 +9,7 @@ class Player:
 		self.busted = False
 		self.bet = []
 		self.blackjack = False
+		self.split = False
 
 	def get_fund(self):
 		return Player.fund 
@@ -18,6 +19,9 @@ class Player:
 
 	def is_busted(self):
 		return self.busted
+
+	def is_split(self):
+		return self.split
 
 	def add_fund(self):
 		if self.blackjack:
