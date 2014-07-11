@@ -14,7 +14,7 @@ class Card:
 	def get_rank(self):
 		return self.rank
 
-	def get_value(self,rank):
+	def get_rank_value(self,rank):
 		return Rank_Values[rank]
 
 
