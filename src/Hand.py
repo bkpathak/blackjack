@@ -5,16 +5,16 @@ class Hand:
 	'''
 
 	def __init__(self):
-		self.player_hand = []
+		self.hand = []
 
 	def add_card(self,card):
-		self.player_hand.append(card)
-		return self.player_hand
-
+		self.hand.append(card)
+		
+		
 	def get_value(self):
 		value = 0
 		is_ACE = False
-		for card in self.player_hand:
+		for card in self.hand:
 			rank = card.get_rank()
 			if rank == "ACE":
 				is_ACE = True
@@ -26,11 +26,25 @@ class Hand:
 
 		return value
 
+	def is_busted(self):
+		if self.get_value() > 21:
+			return True
+		else:
+			return False
+
+	def is_blackjack(self):
+		if self.get_value() != 21:
+			print("Please, count your card properly.It's not BlackJack.")
+			return False
+		else:
+			return True
+
+
 	def print_cards(self):
-		print(','.join([card.get_rank()+" of "+card.get_suit() for card in self.player_hand]))
+		print(','.join([card.get_rank()+" of "+card.get_suit() for card in self.hand]))
 
 	def print_dealer_initial_hand(self):
 		'''
 		This function hide one of the player card initially.
 		'''
-		print(','.join([self.player_hand[0].get_rank()+" of "+self.player_hand[0].get_suit(),'[Hidden Card]']))
+		print(','.join([self.hand[0].get_rank()+" of "+self.hand[0].get_suit(),'[Hidden Card]']))
