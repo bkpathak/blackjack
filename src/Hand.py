@@ -6,6 +6,7 @@ class Hand:
 
 	def __init__(self):
 		self.hand = []
+	
 
 	def add_card(self,card):
 		self.hand.append(card)
@@ -16,9 +17,9 @@ class Hand:
 		is_ACE = False
 		for card in self.hand:
 			rank = card.get_rank()
-			if rank == "ACE":
+			if rank == 'ACE':
 				is_ACE = True
-			value += card.get_value(rank)
+			value += card.get_rank_value(rank)
 			#Make Ace value 11 if hand is soft i.e less then 12				
 			if is_ACE:
 				if value < 12:
@@ -28,20 +29,9 @@ class Hand:
 
 	def get_hand(self):
 		return self.hand
-		
-	def is_busted(self):
-		if self.get_value() > 21:
-			return True
-		else:
-			return False
 
-
-	def is_blackjack(self):
-		if self.get_value() != 21:
-			return False
-		else:
-			return True
-
+	def remove_card(self): # remove card in the case of split
+		return self.hand.pop()
 
 	def print_cards(self):
 		print(','.join([card.get_rank()+" of "+card.get_suit() for card in self.hand]))
