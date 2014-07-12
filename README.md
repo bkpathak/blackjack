@@ -28,7 +28,8 @@ The player is paid according to the standard method.Player get paid __3:2__ for 
 # Running the game
 
 Download the folder and run the main.py file containing inside the the src directory.The game is built using Pyhton 3.4.0 [GCC 4.8.2] on Ubuntu 14.04.
-``` python 3 main.py ```
+
+``` python3 main.py ```
 
 # Sample output of program
 
