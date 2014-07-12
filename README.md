@@ -30,3 +30,5 @@ The player is paid according to the standard method.Player get paid __3:2__ for 
 Download the folder and run the main.py file containing inside the the src directory.
 
 # Sample output of program
+
+![Alt text](/home/bijay/Desktop/output1.png "Sample Output")
