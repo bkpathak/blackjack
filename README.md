@@ -30,71 +30,49 @@ The player is paid according to the standard method.Player get paid __3:2__ for 
 Download the folder and run the main.py file containing inside the the src directory.
 
 # Sample output of program
-
+```
 *****Welcome to BlackJack!*****
-
 *****!!Rules!!*****
-
 1.Options to player:Hit, Stand, Double and Split
-
 2.Type Blackjack if your hand have Blackjack combination(21)!
-
 3.Other rules of game is based on the description on wikipedia.
-
 4.Detail rules used in game is described in Readme file.
 
 Round: 1
 You have 100.00 chips.
-
 Place your bet: 10
 
 
 Player Hand: 2 of Diamonds,5 of Clubs
-
 Dealer Hand: 8 of Spades,[Hidden Card]
 
 
 Player's Turn:
-
 Hand: 2 of Diamonds,5 of Clubs
-
 Player's play:hit
-
 9 of Diamonds
-
 Hand: 2 of Diamonds,5 of Clubs,9 of Diamonds
-
 Player's play:hit
-
 3 of Clubs
-
 Hand: 2 of Diamonds,5 of Clubs,9 of Diamonds,3 of Clubs
-
 Player's play:stand
 
 Dealer's Turn:
-
 Hand :8 of Spades,4 of Spades
 
 Dealer's Play: Hit
-
 5 of Diamonds
-
 Hand :8 of Spades,4 of Spades,5 of Diamonds
-
 Dealer's Play: Stand
 
 
 Player's Hand: 2 of Diamonds,5 of Clubs,9 of Diamonds,3 of Clubs
-
 Dealer's Hand: 8 of Spades,4 of Spades,5 of Diamonds
-
 Player Win!!!
 
 
 Player current Status:
-
 Player has 110.00 chips
 
 Play another round(yes/no)? 
-
+```
