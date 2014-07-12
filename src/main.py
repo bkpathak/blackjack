@@ -8,7 +8,7 @@ if __name__ == '__main__':
 	print("1.Options to player:Hit, Stand, Double and Split")
 	print("2.Type Blackjack if your hand have Blackjack combination(21)!")
 	print("3.Other rules of game is based on the description on wikipedia.")
-	print("4.All the rules used in game is described in Readme file.\n")
+	print("4.Detail rules used in game is described in Readme file.\n")
 	round = 1
 	next_round = 'yes'
 	while next_round == 'yes':
