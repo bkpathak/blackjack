@@ -14,6 +14,7 @@ It has implementation of four standard options for player after receiving two in
 * __Stand__:Player takes no more cards and dealer draws the card.
 
 Following rules are implemented for the dealer in the game.
+
 *Dealer hits until his cards total 17 or more points.
 *Dealer also hits on _soft 17_(i.e, when the dealer initial 2 card value is 17, eg. e.g., an initial ace and six).The dealer never splits and double down.
 *Dealer never split and double down.
