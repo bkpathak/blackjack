@@ -9,6 +9,7 @@ class BlackJack:
 	Creates and manages the game.Check for the condition of the game whether player wins, loss or busted.
 	'''
 	def __init__(self):
+		self.moves = ["hit","stand","double","split"]
 		self.deck = Deck()
 		self.player = Player()
 		self.player_hand = []
@@ -88,23 +89,37 @@ class BlackJack:
 				remove_card = self.player_hand[0].remove_card()
 				self.player.current_bet(self.player.get_bet())
 				self.player_hand[1].add_card(remove_card)
-				self.player_hand[0].add_card(self.deck.deal_card())
-				self.player_hand[1].add_card(self.deck.deal_card())
-				return True
+				for i in range(0,2):
+					print("Play Hand",i)
+					self.player_hand[i].add_card(self.deck.deal_card())
+					while True:
+						print("Hand: ",end="")
+						self.player_hand[i].print_cards()	
+						player_input = input("Player's play:").lower()
+						if player_input not in ["hit","stand"]:
+							print("Only Hit and Stand is valid after splitting.")
+							player_input = input("Enter your play :").lower()
+						elif player_input == "stand":
+							break
+						else:
+							pass
 
+						self.play_hit(self.player_hand[i],i)
+						
+						if self.player.is_busted(i):
+							break
+
+
+				
 			else:
 				print("\nNot enough fund to split.Try other move!!!")
-				return False
-
+				
 		else:
 			print("\nSplitting is only allowed on initial hand when cards rank are equal.")
-			return False
-
-
+	
 
 	def player_move(self):
 
-		moves = ["hit","stand","double","split"]
 		self.player_hand[0].add_card(self.deck.deal_card())
 		self.dealer_hand.add_card(self.deck.deal_card())
 		self.player_hand[0].add_card(self.deck.deal_card())
@@ -120,37 +135,28 @@ class BlackJack:
 			return
 
 		print("\n\nPlayer's Turn:")
-		flag = False
 		
 		while True:
 			print("Hand: ",end="")
-			if not flag:
-				self.player_hand[0].print_cards()
-			else:
-				self.player_hand[1].print_cards()
+			self.player_hand[0].print_cards()			
+			player_input = input("Player's play:").lower()
+			if player_input not in self.moves:
+				print("Enter valid moves: "+",".join(self.moves))
 
-			player_input = input("Player's play:")
-			if player_input not in moves:
-				print("Enter valid moves: "+",".join(moves))
+			if player_input == 'hit':
+				self.play_hit(self.player_hand[0])
+				if self.player.is_busted():
+					break
 
-			if player_input.lower() == 'hit':
-				self.play_hit(self.player_hand[0])            # if split complete each hand before playing another hand
-				if flag:
-					self.play_hit(self.player_hand[1],1)
 
-			elif player_input.lower() == 'double' and not self.player.is_split():   # Double is not allowed after split
+			elif player_input == 'double':   # Double is not allowed after split
 				self.play_double()
 			
-			elif player_input.lower() == 'split':
+			elif player_input == 'split':
 				if not self.player.is_split():      # Split is not allowed in the split hand itself.
-					if self.play_split():
-						for i in range(0,2):
-							if i == 0:
-								print("Player's play for first hand after split :")
-								break
-							else:
-								flag = True
-								print("Player's play for second hand after split") 
+					self.play_split()
+					break
+							
 				else:
 					print("\nSplitting is only allowed on initial hand when cards are equal.!!!")
 			
@@ -158,17 +164,7 @@ class BlackJack:
 				break
 
 			
-			if not self.player.is_split() and self.player.is_busted():
-				break
-
-			elif not flag and self.player.is_split():
-				continue
-
-			elif flag and self.player.is_busted(1):
-				break
-
-			else:
-				continue
+			
 
 
 	def dealer_move(self):
