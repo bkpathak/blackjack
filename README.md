@@ -138,3 +138,80 @@ Player has 100.00 chips
 
 Play another round(yes/no)? 
 ```
+### Sample Output 3 (Double case)
+```
+*****Welcome to BlackJack!*****
+*****!!Rules!!*****
+1.Options to player:Hit, Stand, Double and Split
+2.Type Blackjack if your hand have Blackjack combination(21)!
+3.Other rules of game is based on the description on wikipedia.
+4.Detail rules used in game is described in Readme file.
+
+Round: 1
+You have 100.00 chips.
+Place your bet: 10
+
+
+Player Hand: 7 of Clubs,10 of Diamonds
+Dealer Hand: 4 of Diamonds,[Hidden Card]
+
+
+Player's Turn:
+Hand: 7 of Clubs,10 of Diamonds
+Player's play:double
+Enter the double bet amount: 10
+ACE of Diamonds
+
+Dealer's Turn:
+Hand :4 of Diamonds,9 of Clubs
+
+Dealer's Play: Hit
+10 of Clubs
+Hand :4 of Diamonds,9 of Clubs,10 of Clubs
+
+
+Dealer Hand: 4 of Diamonds,9 of Clubs,10 of Clubs
+Dealer Busted -- Player Wins!!!
+
+
+Player current Status:
+Player has 120.00 chips
+
+Play another round(yes/no)?
+```
+### Sample output 4(Player BlackJack)
+```
+*****Welcome to BlackJack!*****
+*****!!Rules!!*****
+1.Options to player:Hit, Stand, Double and Split
+2.Type Blackjack if your hand have Blackjack combination(21)!
+3.Other rules of game is based on the description on wikipedia.
+4.Detail rules used in game is described in Readme file.
+
+Round: 1
+You have 100.00 chips.
+Place your bet: 10
+
+
+Player Hand: K of Clubs,ACE of Clubs
+Dealer Hand: 4 of Spades,[Hidden Card]
+
+Dealer's Turn:
+Hand :4 of Spades,ACE of Spades
+
+Dealer's Play: Hit
+3 of Hearts
+Hand :4 of Spades,ACE of Spades,3 of Hearts
+Dealer's Play: Stand
+
+
+Player's Hand: K of Clubs,ACE of Clubs
+!!BLACKJACK!!
+Dealer's Hand: 4 of Spades,ACE of Spades,3 of Hearts
+
+
+Player current Status:
+Player has 115.00 chips
+
+Play another round(yes/no)? 
+```
