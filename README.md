@@ -19,4 +19,9 @@ Following rules are implemented for the dealer in the game.
 * Dealer also hits on __*soft 17*__(i.e, when the dealer initial 2 card value is 17, eg. e.g., an initial ace and six).
 * Dealer never split and double down.
 
-The player is paid according to the standard method.Player get paid __3:2__ for __BlackJack__ and __1:1__ for other win.
+The player is paid according to the standard method.Player get paid __3:2__ for __BlackJack__ and __1:1__ for other win.Following rules are implemented for different scenario of the game:
+
+* A blackjack beats any hand that is not a blackjack, even one with a value of 21.
+* In the case of a tied score, known as "push" or "standoff", bets are normally returned without adjustment; however, a blackjack beats any hand that is not a blackjack, even one with a value of 21.
+* An outcome of blackjack vs. blackjack results in a push.
+
