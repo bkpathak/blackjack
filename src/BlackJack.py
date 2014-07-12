@@ -90,7 +90,7 @@ class BlackJack:
 				self.player.current_bet(self.player.get_bet())
 				self.player_hand[1].add_card(remove_card)
 				for i in range(0,2):
-					print("Play Hand",i)
+					print("Play Hand",i+1)
 					self.player_hand[i].add_card(self.deck.deal_card())
 					while True:
 						print("Hand: ",end="")
