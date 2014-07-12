@@ -30,6 +30,9 @@ The player is paid according to the standard method.Player get paid __3:2__ for 
 Download the folder and run the main.py file containing inside the the src directory.
 
 # Sample output of program
+
+### Sample output 1
+
 ```
 *****Welcome to BlackJack!*****
 *****!!Rules!!*****
@@ -73,6 +76,65 @@ Player Win!!!
 
 Player current Status:
 Player has 110.00 chips
+
+Play another round(yes/no)? 
+```
+
+### Sample output 2 (Split case) 
+
+```
+*****Welcome to BlackJack!*****
+*****!!Rules!!*****
+1.Options to player:Hit, Stand, Double and Split
+2.Type Blackjack if your hand have Blackjack combination(21)!
+3.Other rules of game is based on the description on wikipedia.
+4.Detail rules used in game is described in Readme file.
+
+Round: 1
+You have 100.00 chips.
+Place your bet: 10
+
+
+Player Hand: 8 of Diamonds,8 of Spades
+Dealer Hand: 3 of Hearts,[Hidden Card]
+
+
+Player's Turn:
+Hand: 8 of Diamonds,8 of Spades
+Player's play:split
+Player's split on 8
+Play Hand 1
+Hand: 8 of Diamonds,10 of Hearts
+Player's play:hit
+2 of Diamonds
+Hand: 8 of Diamonds,10 of Hearts,2 of Diamonds
+Player's play:stand
+Play Hand 2
+Hand: 8 of Spades,9 of Diamonds
+Player's play:hit
+ACE of Hearts
+Hand: 8 of Spades,9 of Diamonds,ACE of Hearts
+Player's play:hit  
+8 of Hearts
+
+Dealer's Turn:
+Hand :3 of Hearts,J of Clubs
+
+Dealer's Play: Hit
+10 of Clubs
+Hand :3 of Hearts,J of Clubs,10 of Clubs
+
+
+Player's Hand 1: 
+Dealer Hand: 3 of Hearts,J of Clubs,10 of Clubs
+Dealer Busted -- Player Wins!!!
+
+
+Player's Hand 2: 
+Player's Hand: 8 of Spades,9 of Diamonds,ACE of Hearts,8 of Hearts
+Player Busted -- Dealer Wins!!!
+Player current Status:
+Player has 100.00 chips
 
 Play another round(yes/no)? 
 ```
