@@ -1,4 +1,4 @@
-blackjack
+BlackJack
 =========
 
 This is a Text-based Blackjack game.The game is based on the description provided in the [wikipedia](http://en.wikipedia.org/wiki/Blackjack).The objective of the game is to beat the dealer, which  can be done in the following ways:
