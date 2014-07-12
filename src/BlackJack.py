@@ -151,6 +151,7 @@ class BlackJack:
 
 			elif player_input == 'double':   # Double is not allowed after split
 				self.play_double()
+				break                  #Just one card be drawn after placing double bet
 			
 			elif player_input == 'split':
 				if not self.player.is_split():      # Split is not allowed in the split hand itself.
