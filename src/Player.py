@@ -10,6 +10,7 @@ class Player:
 		self.bet = []
 		self.blackjack = False
 		self.split = False
+		self.double = False
 
 	def get_fund(self):
 		'''
@@ -41,6 +42,9 @@ class Player:
 
 	def is_split(self):
 		return self.split
+
+	def is_double(self):
+		return self.double
 
 	def add_fund(self):
 		if self.blackjack:
