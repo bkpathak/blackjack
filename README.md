@@ -25,3 +25,8 @@ The player is paid according to the standard method.Player get paid __3:2__ for 
 * In the case of a tied score, known as "push" or "standoff", bets are normally returned without adjustment; however, a blackjack beats any hand that is not a blackjack, even one with a value of 21.
 * An outcome of blackjack vs. blackjack results in a push.
 
+# Running the game
+
+Download the folder and run the main.py file containing inside the the src directory.
+
+# Sample output of program
