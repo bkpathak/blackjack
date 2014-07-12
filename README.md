@@ -6,7 +6,7 @@ This is a Text-based Blackjack game.The game is based on the description provide
 *Reach a final score higher than the dealer without exceeding 21; or
 *Let the dealer draw additional cards until his or her hand exceeds 21.
 
-It has implementation of four standard options for player after receiving two initial cards: __Hit,Double Down , Split, Stand__.The rules for each implementation is described below:
+The game is implemented with standard 1 deck of cards.It has implementation of four standard options for player after receiving two initial cards: __Hit,Double Down , Split, Stand__.The rules for each implementation is described below:
 
 * __Hit__: Take another card from dealer
 * __Double Down__: After receiving initial two card, player can increase the bet by up to the initial betting amount placed.
