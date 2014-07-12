@@ -16,7 +16,7 @@ It has implementation of four standard options for player after receiving two in
 Following rules are implemented for the dealer in the game.
 
 * Dealer hits until his cards total 17 or more points.
-* Dealer also hits on _soft 17_(i.e, when the dealer initial 2 card value is 17, eg. e.g., an initial ace and six).The dealer never splits and double down.
+* Dealer also hits on _soft 17_(i.e, when the dealer initial 2 card value is 17, eg. e.g., an initial ace and six).
 * Dealer never split and double down.
 
-The player according to the standard method.The p
+The player is paid according to the standard method.Player get paid 3:2 for BlackJack and 1:1 for other win.
