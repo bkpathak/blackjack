@@ -143,9 +143,8 @@ Play another round(yes/no)?
 *****Welcome to BlackJack!*****
 *****!!Rules!!*****
 1.Options to player:Hit, Stand, Double and Split
-2.Type Blackjack if your hand have Blackjack combination(21)!
-3.Other rules of game is based on the description on wikipedia.
-4.Detail rules used in game is described in Readme file.
+2.Other rules of game is based on the description on wikipedia.
+3.Detail rules used in game is described in Readme file.
 
 Round: 1
 You have 100.00 chips.
