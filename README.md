@@ -2,9 +2,9 @@ BlackJack
 =========
 
 This is a Text-based Blackjack game.The game is based on the description provided in the [wikipedia](http://en.wikipedia.org/wiki/Blackjack).The objective of the game is to beat the dealer, which  can be done in the following ways:
-*Get 21 points on the player's first two cards (called a blackjack), without a dealer blackjack;
-*Reach a final score higher than the dealer without exceeding 21; or
-*Let the dealer draw additional cards until his or her hand exceeds 21.
+* Get 21 points on the player's first two cards (called a blackjack), without a dealer blackjack;
+* Reach a final score higher than the dealer without exceeding 21; or
+* Let the dealer draw additional cards until his or her hand exceeds 21.
 
 The game is implemented with standard 1 deck of cards.It has implementation of four standard options for player after receiving two initial cards: __Hit,Double Down , Split, Stand__.The rules for each implementation is described below:
 
@@ -39,9 +39,8 @@ Download the folder and run the main.py file containing inside the the src direc
 *****Welcome to BlackJack!*****
 *****!!Rules!!*****
 1.Options to player:Hit, Stand, Double and Split
-2.Type Blackjack if your hand have Blackjack combination(21)!
-3.Other rules of game is based on the description on wikipedia.
-4.Detail rules used in game is described in Readme file.
+2.Other rules of game is based on the description on wikipedia.
+3.Detail rules used in game is described in Readme file.
 
 Round: 1
 You have 100.00 chips.
@@ -88,9 +87,8 @@ Play another round(yes/no)?
 *****Welcome to BlackJack!*****
 *****!!Rules!!*****
 1.Options to player:Hit, Stand, Double and Split
-2.Type Blackjack if your hand have Blackjack combination(21)!
-3.Other rules of game is based on the description on wikipedia.
-4.Detail rules used in game is described in Readme file.
+2.Other rules of game is based on the description on wikipedia.
+3.Detail rules used in game is described in Readme file.
 
 Round: 1
 You have 100.00 chips.
@@ -186,9 +184,8 @@ Play another round(yes/no)?
 *****Welcome to BlackJack!*****
 *****!!Rules!!*****
 1.Options to player:Hit, Stand, Double and Split
-2.Type Blackjack if your hand have Blackjack combination(21)!
-3.Other rules of game is based on the description on wikipedia.
-4.Detail rules used in game is described in Readme file.
+2.Other rules of game is based on the description on wikipedia.
+3.Detail rules used in game is described in Readme file.
 
 Round: 1
 You have 100.00 chips.
